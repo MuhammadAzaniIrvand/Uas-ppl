@@ -1,24 +1,40 @@
-# 🏠 Aplikasi Manajemen Kos Mandiri - Django
+# 🏠 Aplikasi Manajemen Kos Mandiri (Django)
 
-Aplikasi berbasis web sederhana untuk mengelola manajemen kos. Dibangun menggunakan framework Django (Python) dan Tailwind CSS untuk tampilan halaman utama.
-
-## ✨ Fitur Utama
-1. **Sisi Pengguna Publik**:
-   - Landing page yang menyajikan sekilas informasi kos.
-   - Daftar kamar yang dapat difilter berdasarkan status ketersediaan.
-   - Detail kamar dan form pemesanan langsung untuk calon penghuni.
-2. **Sisi Admin (Dashboard)**:
-   - Manajemen penuh (CRUD) data Kamar (Nomor, Tipe, Harga, Fasilitas, Foto, Status).
-   - Verifikasi pengajuan sewa (Booking) dengan status Menunggu, Disetujui, atau Ditolak.
-   - Hak akses aman (Hanya admin terdaftar yang dapat masuk).
+Aplikasi web sederhana untuk manajemen informasi kamar kos dan pengajuan sewa (booking) dengan fitur unggah bukti transfer DP manual.
 
 ---
 
-## 🛠️ Langkah-Langkah Instalasi
+## 🚀 Fitur Utama
 
-Ikuti langkah di bawah ini untuk menjalankan proyek di perangkat lokal Anda.
+1. **Halaman Publik (User):**
+   - Melihat daftar kamar kos yang tersedia beserta fasilitasnya.
+   - Mengajukan sewa (booking) dengan mengisi data diri.
+   - Melihat ketentuan pembayaran DP (Transfer Bank) dan mengunggah foto bukti transfer langsung dari formulir.
 
-### 1. Kloning Repository
-```bash
-git clone <URL_REPOSITORY_ANDA>
-cd kos_management
+2. **Dashboard Admin (Wajib Login):**
+   - Menggunakan tema modern berbasis Tailwind CSS (*Django Unfold*).
+   - Melakukan CRUD (Tambah, Edit, Hapus) data kamar.
+   - Memverifikasi pengajuan booking dan mengecek berkas foto bukti transfer dari penyewa.
+   - Mengubah status booking menjadi *Pending*, *Disetujui*, atau *Ditolak*.
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Backend:** Django 
+- **Database:** SQLite
+- **UI Publik:** Tailwind CSS (via CDN)
+- **UI Admin:** Django Unfold Theme
+
+---
+
+## 📂 Struktur Utama Proyek
+
+```text
+proyek_kos/
+├── kos_management/      # Folder konfigurasi utama Django
+├── rooms/               # App untuk fitur kamar & booking
+│   └── fixtures/        # Folder data dummy awal (.json)
+├── templates/           # Folder berkas HTML
+├── media/               # Folder penyimpanan berkas foto unggahan
+└── manage.py            # Utilitas perintah Django
